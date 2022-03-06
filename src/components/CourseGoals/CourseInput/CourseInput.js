@@ -11,19 +11,20 @@ const FormControl = styled.div`
   & label {
     font-weight: bold;
     display: block;
-    margin-bottom: 0.5rem;
-    color: ${(props) => (props.invalid ? "red" : "black")};
+    text-align: center;
+    margin-bottom: 0.8rem;
+    color: ${(props) => (props.invalid ? "#c21e1e" : "black")};
   }
 
   & input {
     display: block;
     width: 100%;
-    border: 1px solid ${(props) => (props.invalid ? "#ffd7d7" : "#ccc")};
-    backgound: ${(props) =>
-      props.invalid ? "rgb(230, 36, 36)" : "transparent"};
+    border: 2px solid ${(props) => (props.invalid ? "#c21e1e" : "#ccc")};
+    border-radius: 3px;
+    backgound: ${(props) => (props.invalid ? "#c21e1e" : "transparent")};
     font: inherit;
     line-height: 1.5rem;
-    padding: 0 0.25rem;
+    padding: 0.45rem 0.45rem;
   }
 
   & input:focus {
@@ -33,8 +34,8 @@ const FormControl = styled.div`
   }
 
   // &.invalid input {
-  //   border-color: #ffd7d7;
-  //   background-color: rgb(230, 36, 36);
+  //   border-color: #d1b7c4;
+  //   background-color: #847e82;
   // }
 
   // &.invalid label {
