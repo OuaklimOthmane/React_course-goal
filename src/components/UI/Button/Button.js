@@ -1,42 +1,43 @@
-import styled from "styled-components";
-// import "./Button.css";
+import styles from "./Button.module.css";
+// import styled from "styled-components";
 
 //* Create a FormControl(div) using "styled-components" :
-const Button = styled.button`
-  width: 100%;
-  font: inherit;
-  padding: 0.5rem 1.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #77536b;
-  color: white;
-  border-radius: 4px;
-  background: #6f5265;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
-  cursor: pointer;
+// const Button = styled.button`
+//   width: 100%;
+//   font: inherit;
+//   padding: 0.5rem 1.5rem;
+//   margin-top: 0.3rem;
+//   border: 1px solid #77536b;
+//   color: white;
+//   border-radius: 4px;
+//   background: #6f5265;
+//   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+//   cursor: pointer;
 
-  @media (min-width: 768px) {
-    width: auto;
-  }
+//   @media (min-width: 768px) {
+//     width: auto;
+//   }
 
-  &:focus {
-    outline: none;
-  }
+//   &:focus {
+//     outline: none;
+//   }
 
-  &:hover,
-  &:active {
-    background: #483742;
-    border-color: #483742;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
-  }
-`;
+//   &:hover,
+//   &:active {
+//     background: #483742;
+//     border-color: #483742;
+//     box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+//   }
+// `;
 
-// const Button = (props) => {
-//   return (
-//     <button type={props.type} className="button" onClick={props.onClick}>
-//       {props.children}
-//     </button>
-//   );
-// };
+//* Using JSX component :
+const Button = (props) => {
+  return (
+    <button type={props.type} className={styles.button} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
+};
 
 export default Button;
 
@@ -45,4 +46,7 @@ export default Button;
 //? Solution : "Styled-components" is a package that helps you build  components which have certain styles attached to them where the styles really only affect the components to which they were attached and not any other components.Because what this package does in the end is it looks at the styles we set up here and then it wraps these styles into generated class names where it guarantees that every class name is unique so that it can spill over to other components of the app. And it will then add these classes as global CSS.But now since we have unique class names for every styled component, the style set up here will never be able to affect the number of component in the app because these unique class names are really well unique per style component.(view documentation)
 //? Styled components, like their name suggest are simply normal components which means they can receive props. Props that can be accessed in the style declaration and used to determine values for style rules but we are not using them within the styles in the example.
 //? this case : This does work and it especially works at the place where you are using the "Button" component so in the form itself. So whatever props that you pass to the "Button" component from the "CourseInput" component are automatically applied on the button that  that you decorate using styled components.
-//? So in essence, the Button is now not a normal component but a styled component, so it does receive those props that were passed from outside
+//? So in essence, the Button is now not a normal component but a styled component, so it does receive those props that were passed from outside.
+
+//! CSS modules :
+//? CSS Modules are regular stylesheets using the "[name].module.css" file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format "[filename]_[classname]__[hash]",they are a CSS files in which all class names and animation names are scoped locally by default. and let you use the same CSS class name in different files without worrying about naming clashes.
