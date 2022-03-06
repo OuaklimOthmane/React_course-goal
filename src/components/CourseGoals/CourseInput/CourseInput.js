@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Button from "../../UI/Button/Button";
-// import "./CourseInput.css";
+// import styles from "./CourseInput.module.css";
 import styled from "styled-components";
 
 //* Create a FormControl(div) using "styled-components" :
@@ -66,8 +66,11 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
+      {/* //* Using "styled-components" package : */}
       {/* <FormControl className={!isValid ? "invalid" : ""}> */}
       <FormControl invalid={!isValid}>
+        {/* //* Using css modules :  */}
+        {/* <div className={`${styles[from-control]} ${ !isValid?styles.invalid:""}`}> */}
         <label>Course Goal</label>
         <input
           type="text"
